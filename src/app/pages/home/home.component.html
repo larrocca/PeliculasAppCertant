@@ -1,0 +1,12 @@
+<h1 class="mt-5">
+    Cartelera</h1>
+<div class="row" *ngIf="peliculasArray.length>0">
+    <!--Aca estamos diciendo que lo va a estar haciendo hasta que tenga un contendio, para que no carge primero el segundo array y se iguale a nada -->
+    <div class="col">
+        <app-slideshow [peliculas]="peliculasArray"></app-slideshow>
+        <!--Enviamos por props el array,peliculasArray que obtuvimos del get-->
+    </div>
+</div>
+
+<h1 class="mt-5">Peliculas</h1>
+<app-peliculas-poster-grid [peliculasGrid]="peliculasArray" *ngIf="peliculasArray.length>0"></app-peliculas-poster-grid>

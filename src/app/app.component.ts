@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/Http';
+import { PeliculasService } from './services/peliculas.service';
+import { CarteleraResponse } from './interfaces/cartelera-response';
 
 @Component({
   selector: 'app-root',
