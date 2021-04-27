@@ -1,1 +1,29 @@
-<p>pelicula works!</p>
+<div class="row mt-5" *ngIf="peliculaBuscadaPorId">
+    <div class="col-md-6">
+        <img [src]="peliculaBuscadaPorId.poster_path |poster" [alt]="peliculaBuscadaPorId.title" class="img-thumbnail">
+    </div>
+
+    <div class="col-md-6">
+        <h3>{{peliculaBuscadaPorId.title}}</h3>
+        <div class="row">
+            <div class="col text-white">
+                {{peliculaBuscadaPorId.vote_average}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-white">
+                {{peliculaBuscadaPorId.overview}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mt-5">
+                <button class="btn btn-outline-info" (click)="onRegresar()">
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

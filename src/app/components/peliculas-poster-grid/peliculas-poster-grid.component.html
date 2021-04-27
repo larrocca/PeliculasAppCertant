@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-3 mb-5" *ngFor="let pelicula of peliculasGrid;let i = index">
-        <img src="https://image.tmdb.org/t/p/w500{{pelicula.poster_path}}" class="img-fluid poster">
+        <img [src]="pelicula.poster_path | poster" class="img-fluid poster" (click)="onMovieClick(pelicula)">
         <div>
             <h3>
                 {{pelicula.title}}

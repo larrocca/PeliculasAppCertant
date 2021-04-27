@@ -1,3 +1,4 @@
+
 export interface CarteleraResponse {
     page:          number;
     results:       Movie[];
