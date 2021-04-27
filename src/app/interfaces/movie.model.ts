@@ -32,7 +32,6 @@ constructor(adult: boolean, backdrop_path:string, genre_ids:number[], id: number
         this.video= video            
         this.vote_average= vote_average     
         this.vote_count= vote_count        
-
     }
 
 }

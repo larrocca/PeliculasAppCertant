@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/Http';
 import { Observable } from 'rxjs';
-import { CarteleraResponse} from '../interfaces/cartelera-response';
+import { CarteleraResponse, Movie, Cast, CreditsResponse } from '../interfaces/cartelera-response';
 import {map,tap} from 'rxjs/operators'
-import { Movie } from '../interfaces/movie.model';
 
 @Injectable({
   providedIn: 'root'
@@ -47,4 +46,11 @@ export class PeliculasService {
   getPeliculaPorId (id:number){
     return this._htpp.get<Movie>(this.url + '/movie/' + id, {params: this.params}); //Al poner el <Movie> al lado del get estamos determinando que tipo de observable va a devolver
   }
+
+  
+  getCast(id:number){
+    return this._htpp.get<CreditsResponse>(this.url + '/movie/' + id + '/credits',{params:this.params} )//Al poner el <Cast> al lado del get estamos determinando que tipo de observable va a devolver
+    .pipe(map(resp => resp.cast)) //con esta fomra usando el .pipe y el map le decimos que es solamnete lo que queremos tener, lo que nos interesa de todo ese largo objeto
+  }
+
 }

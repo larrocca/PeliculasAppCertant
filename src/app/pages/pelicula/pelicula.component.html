@@ -24,6 +24,15 @@
             </div>
         </div>
     </div>
-
-
+</div>
+<h1>Actores</h1>
+<div class="col">
+    <div class="row mt-5">
+        <div *ngFor="let cast of casts">
+            <img [src]="cast.profile_path |poster" class="img-thumbnail">
+            <p>
+                {{cast.name}}
+            </p>
+        </div>
+    </div>
 </div>
